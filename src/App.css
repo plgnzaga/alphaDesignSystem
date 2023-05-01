@@ -1,0 +1,95 @@
+*{
+  box-sizing: border-box;
+}
+#root {
+  /* how to implement a wrapper */
+  max-width: 1280px;
+  margin-inline:auto;
+  padding: 2rem;
+  padding-inline: 10px;
+}
+code{
+  display: block;
+  border:0.1px solid lightgray;
+  border-radius: 0.25rem;
+  padding: 0.5rem 1rem;
+  background: #e3e6ef;
+  color: #282828;
+  width: inherit;
+}
+.d-block{
+  display: block;
+}
+.d-flex{
+  display: flex;
+}
+.d-grid{
+  display: grid;
+}
+.d-grid-1{
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+}
+#colors-container{
+  display: grid;
+  grid-template-columns: repeat(8,1fr);
+}
+#colors-container .item{
+  padding: 1rem;
+  width: 100%;
+  aspect-ratio: 1;
+}
+#colors-container .item small{
+  font-size: 1.2rem;
+}
+
+button#next{
+  display: flex;
+  transition: 0.2s background;
+  align-items: center;
+  gap: 0.6em;
+  color:#a100ff;
+}
+button#next .arrow-wrapper{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+button#next .arrow {
+  margin-top: 1px;
+  width: 10px;
+  height: 2px;
+  position: relative;
+  transition: 0.2s;
+}
+button#next .arrow::before {
+  content: "";
+  box-sizing: border-box;
+  position: absolute;
+  border: solid #a100ff;
+  border-width: 0 2px 2px 0;
+  display: inline-block;
+  top: -3px;
+  right: 3px;
+  transition: 0.2s;
+  padding: 3px;
+  transform: rotate(-45deg);
+}
+button#next:hover {
+  
+}
+
+button#next:hover .arrow {
+  background: #a100ff;
+}
+
+button#next:hover .arrow:before {
+  right: 0;
+}
+
+
+@media (prefers-reduced-motion: no-preference) {
+ 
+}
+
