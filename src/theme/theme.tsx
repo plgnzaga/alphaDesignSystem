@@ -2,11 +2,13 @@ import { createTheme } from '@mui/material';
 import {ColorScheme, dangerColors, darkColors, lightColors, primaryColors, secondaryColors, successColors, warningColors} from './palettes/index'
 import { PaletteColorOptionsType } from '../@types/mui';
 
-
-const getColor = (scheme: Partial<ColorScheme>[], value: number): string => {
+export const getColorDetail = (scheme: Partial<ColorScheme>[], value: number): Partial<ColorScheme> | undefined => {
+  return scheme.find((i) => i.shade === value);
+};
+export const getColor = (scheme: Partial<ColorScheme>[], value: number): string => {
     return scheme.find((i) => i.shade === value)?.hexCode ?? '';
-  };
-const getMainColor = (scheme: Partial<ColorScheme>[]) => {
+};
+export const getMainColor = (scheme: Partial<ColorScheme>[]) => {
   return scheme.find((i) => i.main)?.hexCode ?? '';
 }
 
