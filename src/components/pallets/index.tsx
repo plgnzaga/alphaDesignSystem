@@ -8,7 +8,7 @@ const Palette: React.FC<{ colorScheme: Partial<ColorScheme>[] }> = ({ colorSchem
         <Grid sx={{display:'flex',flexWrap:'wrap',gap:'1rem',boxSizing:'border-box'}}>
             {colorScheme.map((item) => 
                 <Box sx={{flexBasis:'23.5%',display:'grid',borderRadius:'0.25rem',background:'white',boxShadow:'10px 10px 30px #bebebe,-10px -10px 30px #ffffff',width:'calc(30%)'}}>
-                <Grid sx={{height:'10rem',background:item.hexCode,padding:'1rem',color:'white'}}>
+                <Grid sx={{height:'10rem',background:item.hexCode,padding:'1rem',color:["Light","Yellow"].includes(item.colorGroup !!) ? 'black' : 'white'}}>
                     <Typography>{item.main ? "Base" : ""}</Typography>
                 </Grid>
                 <Grid sx={{display:'grid',padding:'1rem'}}>
