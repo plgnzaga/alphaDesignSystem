@@ -1,4 +1,3 @@
-import { useState } from 'react'
 import './App.css'
 import { ThemeProvider } from '@mui/material'
 import alphaTheme from './theme/theme'

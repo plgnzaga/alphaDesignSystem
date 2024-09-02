@@ -1,7 +1,6 @@
-import { createTheme, TypographyOptions } from '@mui/material';
+import { createTheme } from '@mui/material';
 import { ColorScheme, dangerColors, darkColors, lightColors, primaryColors, secondaryColors, successColors, warningColors } from './palettes/index'
 import { PaletteColorOptionsType } from '../@types/mui';
-import { BaseTypography } from './typography/base';
 
 export const getColorDetail = (scheme: Partial<ColorScheme>[], value: number): Partial<ColorScheme> | undefined => {
   return scheme.find((i) => i.shade === value);
@@ -148,6 +147,80 @@ const alphaTheme = createTheme({
       fontSize: '0.8rem',
       color:'darkslategray'
     },
+  },
+  components:{
+    MuiButton:{
+      styleOverrides:{
+        root:{
+          fontWeight:400,
+          textTransform:'capitalize',
+        },
+      },
+      defaultProps: {
+        variant: 'contained',
+      },
+      variants:[
+        {
+          props: { variant: "contained", color:"primary"},
+          style: {
+            background: getMainColor(primaryColors),
+          },
+        },{
+          props: { variant: "contained", color:"info"},
+          style: {
+            background: getMainColor(secondaryColors),
+          },
+        },
+        {
+          props: { variant: "contained", color:"success"},
+          style: {
+            background: getMainColor(successColors),
+          },
+        },
+        {
+          props: { variant: "contained", color:"warning"},
+          style: {
+            background: getMainColor(warningColors),
+          },
+        },
+        {
+          props: { variant: "contained", color:"error"},
+          style: {
+            background: getMainColor(dangerColors),
+          },
+        },
+        //outlined
+        {
+          props: { variant: "outlined", color:"primary"},
+          style: {
+            borderColor: getMainColor(primaryColors),
+          },
+        },{
+          props: { variant: "outlined", color:"info"},
+          style: {
+            borderColor: getMainColor(secondaryColors),
+          },
+        },
+        {
+          props: { variant: "outlined", color:"success"},
+          style: {
+            borderColor: getMainColor(successColors),
+          },
+        },
+        {
+          props: { variant: "outlined", color:"warning"},
+          style: {
+            borderColor: getMainColor(warningColors),
+          },
+        },
+        {
+          props: { variant: "outlined", color:"error"},
+          style: {
+            borderColor: getMainColor(dangerColors),
+          },
+        }
+      ]
+    }
   }
 });
 

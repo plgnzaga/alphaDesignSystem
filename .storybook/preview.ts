@@ -1,11 +1,7 @@
-
-import type { Decorator, Preview, StoryFn } from "@storybook/react";
-import alphaTheme from "../src/theme/theme"
-import React from 'react';
-import { ThemeProvider } from '@mui/material/styles'
+import type { Preview } from "@storybook/react";
 
 const preview: Preview = {
-  parameters: { 
+  parameters: {
     controls: {
       matchers: {
         color: /(background|color)$/i,
@@ -13,10 +9,6 @@ const preview: Preview = {
       },
     },
   },
- 
 };
 
 export default preview;
-
-
-

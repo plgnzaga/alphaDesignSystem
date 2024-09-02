@@ -7,7 +7,7 @@ import alphaTheme from "../../theme/theme";
 
 const meta: Meta<typeof TypographyComponent> = {
     component:TypographyComponent,
-    title:'Typography',
+    title:'Alpha UI/Typography',
     decorators: [
         (Story) => (
             <ThemeProvider theme={alphaTheme}>

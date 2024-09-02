@@ -5,7 +5,7 @@ import { dangerColors, darkColors, lightColors, primaryColors, secondaryColors, 
 
 const meta: Meta<typeof Palette> = {
     component:Palette,
-    title:'Palettes',
+    title:'Alpha UI/Palettes',
 }
 export default meta;
 

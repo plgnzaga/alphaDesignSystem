@@ -1,5 +1,5 @@
 import { ArrowCircleLeft, ArrowCircleLeftOutlined, ArrowLeftOutlined, CopyAll, CopyAllTwoTone } from "@mui/icons-material";
-import { Box, Button, Grid, Paper, TextField, Tooltip, Typography, TypographyPropsVariantType } from "@mui/material";
+import { Box, Button, Grid, Paper, TextField, Tooltip, Typography} from "@mui/material";
 import { useCallback, useRef, useState } from "react";
 
 
@@ -26,7 +26,7 @@ const TypographyComponent = () => {
     }, [refs]);
     return (
         <>
-            <Grid sx={{display:'flex'}}>
+            <Grid sx={{display:'flex',position: 'sticky',top: '0',background: 'white',borderBottom: '0.1px solid gray',padding: '1rem 0',zIndex: '2'}}>
             <TextField value={textValue} onChange={(e) => {
                 handleTextChange(e.target.value)
             }} />
