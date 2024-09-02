@@ -142,6 +142,9 @@ const alphaTheme = createTheme({
       fontSize: '1.25rem',
       fontWeight: 500
     },
+    button:{
+      textTransform: 'capitalize',
+    },
     disclaimer:{
       fontFamily: 'Graphik',
       fontSize: '0.8rem',
@@ -152,7 +155,7 @@ const alphaTheme = createTheme({
     MuiButton:{
       styleOverrides:{
         root:{
-          fontWeight:400,
+          fontWeight:500,
           textTransform:'capitalize',
         },
       },
@@ -190,6 +193,12 @@ const alphaTheme = createTheme({
           },
         },
         //outlined
+        {
+          props: { color:"warning"},
+          style: {
+            color:getColorDetail(warningColors,500)?.textColor
+          }
+        },
         {
           props: { variant: "outlined", color:"primary"},
           style: {

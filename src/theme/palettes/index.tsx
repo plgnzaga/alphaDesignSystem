@@ -38,26 +38,27 @@ export const successColors: Partial<ColorScheme>[] =  [
     { shade: 700, hexCode: '#148141', textColor: '#fefefe',colorGroup:'Green'},
 ]
 
+
 export const warningColors: Partial<ColorScheme>[] = [
-    {shade:50, hexCode:'#fdfee8', textColor:'#282828',colorGroup:'Yellow'},
-    {shade:100, hexCode:'#fbffc2', textColor:'#282828',colorGroup:'Yellow'},
-    {shade:200, hexCode:'#fcff89', textColor:'#282828',colorGroup:'Yellow'},
-    {shade:300, hexCode:'#fffd63', textColor:'#282828',colorGroup:'Yellow',main:true},
-    {shade:400, hexCode:'#fdf012', textColor:'#282828',colorGroup:'Yellow'},
-    {shade:450, hexCode:'#feed18', textColor:'#282828',colorGroup:'Yellow'},
-    {shade:500, hexCode:'#ffd700',textColor:'#282828',colorGroup:'Yellow'},
-    {shade:600, hexCode:'#ffc107', textColor:'#282828',colorGroup:'Yellow'},
+    {shade:50, hexCode:'#ffffe7', textColor:'#282828',colorGroup:'Yellow'},
+    {shade:100, hexCode:'#feffc1', textColor:'#282828',colorGroup:'Yellow'},
+    {shade:200, hexCode:'#fffd86', textColor:'#282828',colorGroup:'Yellow'},
+    {shade:300, hexCode:'#fff441', textColor:'#282828',colorGroup:'Yellow'},
+    {shade:400, hexCode:'#ffe60d', textColor:'#282828',colorGroup:'Yellow'},
+    {shade:500, hexCode:'#fed600', textColor:'#282828',colorGroup:'Yellow',main:true},
+    {shade:600, hexCode:'#d19e00', textColor:'#282828',colorGroup:'Yellow'},
+    {shade:700, hexCode:'#a67102',textColor:'#282828',colorGroup:'Yellow'}
 ];
   
 export const dangerColors: Partial<ColorScheme>[] =  [
     {shade:300, hexCode:'#ffa0aa', textColor:'#282828',colorGroup:'Red'},
     {shade:400, hexCode:'#ff6b7e', textColor:'#fefefe',colorGroup:'Red'},
-    {shade:500, hexCode:'#fb3855', textColor:'#fefefe',colorGroup:'Red'},
-    {shade:600, hexCode:'#dc143c', textColor:'#fefefe',colorGroup:'Red',main:true},
-    {shade:700, hexCode:'#c50b34', textColor:'#fefefe',colorGroup:'Red'},
-    {shade:800, hexCode:'#a50c33', textColor:'#fefefe',colorGroup:'Red'},
-    {shade:900, hexCode:'#8d0e33', textColor:'#fefefe',colorGroup:'Red'},
-    {shade:950, hexCode:'#4f0217', textColor:'#fefefe',colorGroup:'Red'},
+    {shade:500, hexCode:'#dd3f57', textColor:'#fefefe',colorGroup:'Red',main:true},
+    {shade:600, hexCode:'#cc3251', textColor:'#fefefe',colorGroup:'Red'},
+    {shade:700, hexCode:'#ab2543', textColor:'#fefefe',colorGroup:'Red'},
+    {shade:800, hexCode:'#90213e', textColor:'#fefefe',colorGroup:'Red'},
+    {shade:900, hexCode:'#7b203a', textColor:'#fefefe',colorGroup:'Red'},
+    {shade:950, hexCode:'#440d1b', textColor:'#fefefe',colorGroup:'Red'},
 ];
 
 export const lightColors: Partial<ColorScheme>[] =  [
