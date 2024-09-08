@@ -19,34 +19,10 @@ export default meta;
 
 type Story = StoryObj<typeof meta>;
 
-export const Primary: Story = {
+export const Base: Story = {
     args:{
         variant:'outlined',
         color:'primary'
-    }
-}
-export const Info: Story = {
-    args:{
-        variant:'outlined',
-        color:'info'
-    }
-}
-export const Success: Story = {
-    args:{
-        variant:'outlined',
-        color:'success'
-    }
-}
-export const Warning: Story = {
-    args:{
-        variant:'outlined',
-        color:'warning'
-    }
-}
-export const Error: Story = {
-    args:{
-        variant:'outlined',
-        color:'error'
     }
 }
 

@@ -1,6 +1,7 @@
 import { createTheme } from '@mui/material';
-import { ColorScheme, dangerColors, darkColors, lightColors, primaryColors, secondaryColors, successColors, warningColors } from './palettes/index'
+import { ColorScheme, dangerColors, darkColors, infoColors, lightColors, primaryColors, secondaryColors, successColors, warningColors } from './palettes/index'
 import { PaletteColorOptionsType } from '../@types/mui';
+import { BorderColor } from '@mui/icons-material';
 
 export const getColorDetail = (scheme: Partial<ColorScheme>[], value: number): Partial<ColorScheme> | undefined => {
   return scheme.find((i) => i.shade === value);
@@ -36,6 +37,7 @@ const alphaTheme = createTheme({
       800: getColor(secondaryColors, 800),
       900: getColor(secondaryColors, 900),
       950: getColor(secondaryColors, 950),
+      contrastText: getMainColor(lightColors),
     } as PaletteColorOptionsType,
     success: {
       main: getMainColor(successColors),
@@ -60,7 +62,7 @@ const alphaTheme = createTheme({
       500: getColor(warningColors, 500),
       600: getColor(warningColors, 600),
     } as PaletteColorOptionsType,
-    danger: {
+    error: {
       main: getMainColor(dangerColors),
       300: getColor(dangerColors, 300),
       400: getColor(dangerColors, 400),
@@ -70,6 +72,18 @@ const alphaTheme = createTheme({
       800: getColor(dangerColors, 800),
       900: getColor(dangerColors, 900),
       950: getColor(dangerColors, 950),
+      contrastText: getMainColor(lightColors),
+    } as PaletteColorOptionsType,
+    info: {
+      main: getMainColor(infoColors),
+      300: getColor(infoColors, 300),
+      400: getColor(infoColors, 400),
+      500: getColor(infoColors, 500),
+      600: getColor(infoColors, 600),
+      700: getColor(infoColors, 700),
+      800: getColor(infoColors, 800),
+      900: getColor(infoColors, 900),
+      950: getColor(infoColors, 950),
       contrastText: getMainColor(lightColors),
     } as PaletteColorOptionsType,
     light: {
@@ -82,6 +96,7 @@ const alphaTheme = createTheme({
       300: getColor(lightColors, 300),
       400: getColor(lightColors, 400),
       500: getColor(lightColors, 500),
+      contrastText: '#282828',
     } as PaletteColorOptionsType,
     dark: {
       main: getMainColor(darkColors),
@@ -93,6 +108,7 @@ const alphaTheme = createTheme({
       800: getColor(darkColors, 800),
       900: getColor(darkColors, 900),
       950: getColor(darkColors, 950),
+      contrastText: getMainColor(lightColors),
     } as PaletteColorOptionsType,
     default: {
       main: '#f5f5f5'
@@ -155,8 +171,13 @@ const alphaTheme = createTheme({
     MuiButton:{
       styleOverrides:{
         root:{
-          fontWeight:500,
+          fontWeight:600,
+          letterSpacing:'0.75px',
+          boxShadow:'0px 3px 6px 0px rgba(140, 149, 159, 0.15);',
           textTransform:'capitalize',
+          '&:hover':{
+            boxShadow:'0px 3px 6px 0px rgba(140, 149, 159, 0.15);',
+          }
         },
       },
       defaultProps: {
@@ -164,68 +185,43 @@ const alphaTheme = createTheme({
       },
       variants:[
         {
-          props: { variant: "contained", color:"primary"},
-          style: {
-            background: getMainColor(primaryColors),
-          },
-        },{
-          props: { variant: "contained", color:"info"},
-          style: {
-            background: getMainColor(secondaryColors),
-          },
-        },
-        {
-          props: { variant: "contained", color:"success"},
-          style: {
-            background: getMainColor(successColors),
-          },
-        },
-        {
           props: { variant: "contained", color:"warning"},
           style: {
             background: getMainColor(warningColors),
+            color:getColorDetail(warningColors,700)?.hexCode,
+            fontWeight:600,
+            '&:hover':{
+              color: getColorDetail(warningColors,700)?.hexCode,
+              background: getColorDetail(warningColors,200)?.hexCode
+            }
           },
         },
-        {
-          props: { variant: "contained", color:"error"},
-          style: {
-            background: getMainColor(dangerColors),
-          },
-        },
+        
         //outlined
         {
-          props: { color:"warning"},
+          props: { variant: "outlined", },
           style: {
-            color:getColorDetail(warningColors,500)?.textColor
-          }
-        },
-        {
-          props: { variant: "outlined", color:"primary"},
-          style: {
-            borderColor: getMainColor(primaryColors),
-          },
-        },{
-          props: { variant: "outlined", color:"info"},
-          style: {
-            borderColor: getMainColor(secondaryColors),
-          },
-        },
-        {
-          props: { variant: "outlined", color:"success"},
-          style: {
-            borderColor: getMainColor(successColors),
+            border:'2px solid',
+            fontWeight:600,
+            '&:hover':{
+              border:'2px solid',
+              fontWeight:600,
+            }
           },
         },
         {
           props: { variant: "outlined", color:"warning"},
           style: {
             borderColor: getMainColor(warningColors),
+            color:getColorDetail(warningColors,600)?.hexCode
           },
         },
         {
-          props: { variant: "outlined", color:"error"},
+          props: { variant: "outlined", color:"light"},
           style: {
-            borderColor: getMainColor(dangerColors),
+            borderColor: '#f5f5f5',
+            color:'gray',
+            boxShadow:' 10px 10px 30px #ededed, -10px -10px 30px #ffffff'
           },
         }
       ]
