@@ -1,13 +1,12 @@
 
 import type { Meta,StoryObj } from "@storybook/react";
-import ButtonComponent from "../../../components/buttons";
 import { ThemeProvider } from "@mui/material";
 import alphaTheme from "../../../theme/theme";
+import ActionDialog from "../../../components/dialog";
 
-const meta: Meta<typeof ButtonComponent> = {
-    component:ButtonComponent,
-    title:'Alpha UI/Components/Buttons/Variants/Outlined',
-    
+const meta: Meta<typeof ActionDialog> = {
+    component:ActionDialog,
+    title:'Alpha UI/Components/Dialog',
     decorators: [
         (Story) => (
             <ThemeProvider theme={alphaTheme}>
@@ -22,8 +21,7 @@ type Story = StoryObj<typeof meta>;
 
 export const Base: Story = {
     args:{
-        variant:'outlined',
-        color:'primary'
+      
     }
 }
 

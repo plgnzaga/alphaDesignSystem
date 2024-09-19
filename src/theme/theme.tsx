@@ -1,7 +1,6 @@
 import { createTheme } from '@mui/material';
-import { ColorScheme, dangerColors, darkColors, infoColors, lightColors, primaryColors, secondaryColors, successColors, warningColors } from './palettes/index'
 import { PaletteColorOptionsType } from '../@types/mui';
-import { BorderColor } from '@mui/icons-material';
+import { ColorScheme, dangerColors, darkColors, infoColors, lightColors, primaryColors, secondaryColors, successColors, warningColors } from './palettes/index';
 
 export const getColorDetail = (scheme: Partial<ColorScheme>[], value: number): Partial<ColorScheme> | undefined => {
   return scheme.find((i) => i.shade === value);
@@ -217,7 +216,7 @@ const alphaTheme = createTheme({
           },
         },
         {
-          props: { variant: "outlined", color:"light"},
+          props: { variant: "outlined", color:"light" as any},
           style: {
             borderColor: '#f5f5f5',
             color:'gray',
@@ -260,7 +259,26 @@ const alphaTheme = createTheme({
         root:{
           //borderRadius:'1.5rem'
         },
-        
+      }
+    },
+    MuiAppBar:{
+      defaultProps:{
+        style:{
+          background:getColorDetail(lightColors,10)?.hexCode,
+          color:getMainColor(darkColors),
+          boxShadow:'rgba(0, 0, 0, 0.08) 0px 4px 12px',
+          
+        }
+      },
+      styleOverrides:{
+        root:{
+          "&[aria-navbar='light']":{
+            "& svg":{
+              color:getMainColor(primaryColors)
+            },
+          }
+          
+        }
       }
     }
   }

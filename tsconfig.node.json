@@ -3,7 +3,8 @@
     /* Types */
     "typeRoots": [
         //"./node_modules/@types",
-        "./src/@types"
+        "./src/@types",
+        "./src/theme/@types"
     ],
     "target": "ES2022",
     "lib": ["ES2023"],

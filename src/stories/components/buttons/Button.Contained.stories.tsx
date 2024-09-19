@@ -7,6 +7,7 @@ import alphaTheme from "../../../theme/theme";
 const meta: Meta<typeof ButtonComponent> = {
     component:ButtonComponent,
     title:'Alpha UI/Components/Buttons/Variants/Contained',
+    
     decorators: [
         (Story) => (
             <ThemeProvider theme={alphaTheme}>

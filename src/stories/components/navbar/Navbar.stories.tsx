@@ -1,12 +1,13 @@
 
 import type { Meta,StoryObj } from "@storybook/react";
-import ButtonComponent from "../../../components/buttons";
 import { ThemeProvider } from "@mui/material";
 import alphaTheme from "../../../theme/theme";
+import Navbar from "../../../components/navbar";
+import { fn } from "@storybook/test";
 
-const meta: Meta<typeof ButtonComponent> = {
-    component:ButtonComponent,
-    title:'Alpha UI/Components/Buttons/Variants/Outlined',
+const meta: Meta<typeof Navbar> = {
+    component:Navbar,
+    title:'Alpha UI/Components/Navbar',
     
     decorators: [
         (Story) => (
@@ -15,6 +16,7 @@ const meta: Meta<typeof ButtonComponent> = {
             </ThemeProvider>
         ),
     ],
+    args: { onClick: fn() },
 }
 export default meta;
 
@@ -22,8 +24,8 @@ type Story = StoryObj<typeof meta>;
 
 export const Base: Story = {
     args:{
-        variant:'outlined',
-        color:'primary'
-    }
+      
+    },
+    
 }
 
