@@ -74,6 +74,10 @@ const ButtonComponent = (props:any) => {
               </TableCell>
               <TableCell>{props.variant}</TableCell>
               <TableCell>{row.color}</TableCell>
+              {/* <TableCell>
+              <Button variant={props.variant} buttontype="proceed">Proceed</Button>
+              <Button variant={props.variant} buttontype="download">Download</Button>
+              </TableCell> */}
               <TableCell>{row.useCase}</TableCell>
             </TableRow>
           ))}

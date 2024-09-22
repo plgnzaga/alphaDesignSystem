@@ -3,6 +3,7 @@
 export type TypographyVariants = "hero1" | "hero2" | "hero3" | "h1" | "h2" | "h3" | "h4" | "h5" | "h6" | "button" | "disclaimer";
 export const BaseTypography = {
       fontFamily: 'Graphik',
+      fontSize:'1rem',
       lineHeight:'unset',
       hero1: {
         fontFamily: 'Graphik',
@@ -45,6 +46,18 @@ export const BaseTypography = {
       h6:{
         fontSize:'1.25rem',
         fontWeight:500
+      },
+      large:{
+        fontSize:'1.25rem'
+      },
+      medium:{ //16px
+          fontSize:'1.15rem'
+      },
+      normal:{
+        fontSize:'1rem'
+      },
+      small:{ //12px
+          fontSize:'0.75rem'
       },
       button: {
         textTransform: 'unset',

@@ -1,6 +1,10 @@
+import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 import { createTheme } from '@mui/material';
-import { PaletteColorOptionsType } from '../@types/mui';
+import { createElement, FunctionComponent, ReactElement } from 'react';
+import { renderToStaticMarkup } from 'react-dom/server';
+import { PaletteColorOptionsType } from './mui';
 import { ColorScheme, dangerColors, darkColors, infoColors, lightColors, primaryColors, secondaryColors, successColors, warningColors } from './palettes/index';
+
 
 export const getColorDetail = (scheme: Partial<ColorScheme>[], value: number): Partial<ColorScheme> | undefined => {
   return scheme.find((i) => i.shade === value);
@@ -11,6 +15,12 @@ export const getColor = (scheme: Partial<ColorScheme>[], value: number): string 
 export const getMainColor = (scheme: Partial<ColorScheme>[]) => {
   return scheme.find((i) => i.main)?.hexCode ?? '';
 }
+
+export const reactSvgComponentToMarkupString = (Component:any, props:any) =>
+  `data:image/svg+xml,${encodeURIComponent(
+    renderToStaticMarkup(createElement(Component, props))
+  )}`;
+
 
 const alphaTheme = createTheme({
   palette: {
@@ -114,21 +124,18 @@ const alphaTheme = createTheme({
     },
   },
   typography: {
-    fontFamily: 'Graphik',
+    fontFamily: 'Graphik !important',
     hero1: {
-      fontFamily: 'Graphik',
       fontSize: '6rem',
       fontWeight: 800,
       display: 'block'
     },
     hero2: {
-      fontFamily: 'Graphik',
       fontSize: '5rem',
       fontWeight: 500,
       display: 'block'
     },
     hero3: {
-      fontFamily: 'Graphik',
       fontSize: '4rem',
       fontWeight: 500,
       display: 'block'
@@ -157,6 +164,18 @@ const alphaTheme = createTheme({
       fontSize: '1.25rem',
       fontWeight: 500
     },
+    large:{
+      fontSize:'1.25rem'
+    },
+    medium:{ //16px
+        fontSize:'1.15rem'
+    },
+    normal:{
+      fontSize:'1rem'
+    },
+    small:{ //12px
+        fontSize:'0.75rem'
+    },
     button:{
       textTransform: 'capitalize',
     },
@@ -167,6 +186,13 @@ const alphaTheme = createTheme({
     },
   },
   components:{
+    MuiTypography:{
+      styleOverrides:{
+        root:{
+          fontFamily:'Graphik !important',
+        }
+      },
+    },
     MuiButton:{
       styleOverrides:{
         root:{
@@ -176,6 +202,67 @@ const alphaTheme = createTheme({
           textTransform:'capitalize',
           '&:hover':{
             boxShadow:'0px 3px 6px 0px rgba(140, 149, 159, 0.15);',
+          },
+          "&[buttontype='proceed']":{
+            lineHeight:'unset !important',
+            paddingTop:'0.5rem',
+            paddingBottom:'0.5rem',
+            '&::after':{
+              content: "' '",
+              backgroundImage:'url("../src/theme/dist/images/svg/acnlogo.svg")',
+              backgroundSize: 'contain',
+              backgroundRepeat: 'no-repeat',
+              height:'14px',
+              width: '14px',
+              transition: 'transform .3s ease-in-out',
+              '& svg path':{
+                stroke:'#A100FF !important'
+              }
+            },
+            '&:hover':{
+              background:getColorDetail(primaryColors,800)?.hexCode,
+            },
+            '&:hover::after':{
+               transform: 'translateX(4px)'
+            },
+          },
+          "&[buttontype='download']":{
+            paddingLeft:0,
+            paddingRight:'12%',
+            position: 'relative',
+            width: '150px',
+            height: '40px',
+            cursor: 'pointer',
+            display: 'flex',
+            alignItems: 'center',
+            overflow: 'hidden',
+            transition: 'all 0.3s',
+            // transform: 'translateX(22px)',
+            // color: '#fff',
+            '&:hover':{
+              background:getColorDetail(primaryColors,800)?.hexCode,
+              color:'transparent'
+            },
+            '&:hover::after':{
+              color:'#fff !important',
+              transform: 'translateX(15px)'
+            },
+            '&::after':{
+              content: "' '",
+              backgroundImage:'url("../src/theme/dist/images/svg/download.svg")',
+              backgroundSize: 'contain',
+              backgroundPosition:'center',
+              backgroundRepeat: 'no-repeat',
+              height:'100%',
+              width: '14px',
+              transition: 'all 0.3s',
+              
+              //backgroundColor: '#17795E',
+              position: 'absolute',
+              transform: 'translateX(70px)',
+              display:'grid !important',
+              placeItems:'center'
+            },
           }
         },
       },
@@ -195,8 +282,6 @@ const alphaTheme = createTheme({
             }
           },
         },
-        
-        //outlined
         {
           props: { variant: "outlined", },
           style: {
@@ -240,7 +325,7 @@ const alphaTheme = createTheme({
             fontSize:'1rem',
           },
           "& .MuiDialogContent-root":{
-            padding: "1.5rem"
+            padding: "1.5rem !important"
           },
           "& .MuiDialogActions-root":{
             padding: "0.75rem",
@@ -277,7 +362,6 @@ const alphaTheme = createTheme({
               color:getMainColor(primaryColors)
             },
           }
-          
         }
       }
     }

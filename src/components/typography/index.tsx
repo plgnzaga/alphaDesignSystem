@@ -7,7 +7,7 @@ import { useCallback, useRef, useState } from "react";
 
 const TypographyComponent = () => {
     const [textValue, setTextValue] = useState('Alpha')
-    const Variants = ["hero1", "hero2", "hero3", "h1", "h2", "h3", "h4", "h5", "h6", "button", "disclaimer"]
+    const Variants = ["hero1", "hero2", "hero3", "h1", "h2", "h3", "h4", "h5", "h6", "large","medium","normal","small", "button", "disclaimer"]
     const refs = Variants.map(() => useRef(null));
     const [isCopying,setIsCopying] = useState<boolean>(false);
 
