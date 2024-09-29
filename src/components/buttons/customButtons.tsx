@@ -5,18 +5,27 @@ const CustomButtonsComponent = (props:any) => {
     type ButtonType = {
         id:number,
         name:string,
+        type:string,
         useCase:string
     }
     const buttonTypes:ButtonType[] = [
         {
             id:1,
             name:'Proceed',
+            type:'proceed',
             useCase:'Used to continue to the next step in a process or workflow'
         },
         {
             id:2,
-            name:'Download',  
+            name:'Download',
+            type:'download',
             useCase:'Used to save a digital asset, such as a document or data dump'
+        },
+        {
+          id:3,
+          name:'Add',
+          type:'add',
+          useCase:'Use when adding an item or entity'
         }
     ]
 
@@ -39,9 +48,9 @@ const CustomButtonsComponent = (props:any) => {
               sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
             >
               <TableCell component="th" scope="row">
-                <Button variant={'contained'} buttonType={row.name.toLowerCase()}>{`${row.name.charAt(0).toUpperCase()}${row.name.slice(1)}`}</Button>
+                <Button variant={'contained'} buttonType={row.type}>{row.name}</Button>
               </TableCell>
-              <TableCell>{`${row.name.toLowerCase()}`}</TableCell>
+              <TableCell>{`${row.type.toLowerCase()}`}</TableCell>
               <TableCell>{row.useCase}</TableCell>
             </TableRow>
           ))}

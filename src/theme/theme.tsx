@@ -230,7 +230,7 @@ const alphaTheme = createTheme({
             paddingLeft:0,
             paddingRight:'12%',
             position: 'relative',
-            width: '150px',
+            minWidth:'100%',
             height: '40px',
             cursor: 'pointer',
             display: 'flex',
@@ -243,10 +243,7 @@ const alphaTheme = createTheme({
               background:getColorDetail(primaryColors,800)?.hexCode,
               color:'transparent'
             },
-            '&:hover::after':{
-              color:'#fff !important',
-              transform: 'translateX(15px)'
-            },
+            
             '&::after':{
               content: "' '",
               backgroundImage:'url("../src/theme/dist/images/svg/download.svg")',
@@ -259,9 +256,47 @@ const alphaTheme = createTheme({
               
               //backgroundColor: '#17795E',
               position: 'absolute',
-              transform: 'translateX(70px)',
-              display:'grid !important',
-              placeItems:'center'
+              right:'calc(10%)',
+            },
+            '&:hover::after':{
+              color:'#fff !important',
+              
+              transform:'translate(50%,0)',
+              right:'50%',
+            },
+          },
+          "&[buttontype='add']":{
+            paddingLeft:0,
+            paddingRight:'12%',
+            position: 'relative',
+            minWidth:'100%',
+            height: '40px',
+            cursor: 'pointer',
+            display: 'flex',
+            alignItems: 'center',
+            overflow: 'hidden',
+            transition: 'all 0.3s',
+            '&:hover':{
+              background:getColorDetail(primaryColors,800)?.hexCode,
+              color:'transparent'
+            },
+            
+            '&::after':{
+              content: "' '",
+              backgroundImage:'url("../src/theme/dist/images/svg/add.svg")',
+              backgroundSize: 'contain',
+              backgroundPosition:'center',
+              backgroundRepeat: 'no-repeat',
+              height:'100%',
+              width: '14px',
+              transition: 'all 0.3s',
+              position: 'absolute',
+              right:'calc(10%)',
+            },
+            '&:hover::after':{
+              color:'#fff !important',
+              transform:'translate(50%,0)',
+              right:'50%',
             },
           }
         },
