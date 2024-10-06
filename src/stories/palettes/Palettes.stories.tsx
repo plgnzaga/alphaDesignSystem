@@ -1,7 +1,7 @@
 
 import type { Meta,StoryObj } from "@storybook/react";
 import Palette from "../../components/pallets";
-import { dangerColors, darkColors, lightColors, primaryColors, secondaryColors, successColors, warningColors } from "../../theme/palettes";
+import { dangerColors, darkColors, lightColors, primaryColors, secondaryColors, successColors, warningColors } from "../../theme/palettes/base";
 
 const meta: Meta<typeof Palette> = {
     component:Palette,
