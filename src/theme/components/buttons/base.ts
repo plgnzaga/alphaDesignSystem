@@ -2,39 +2,6 @@
 import { getColorDetail, getMainColor } from "../../common/functions";
 import { darkColors, lightColors, primaryColors, warningColors } from "../../palettes/base";
 
-const commonButtonStyle = {
-  paddingLeft: 0,
-  paddingRight: '12%',
-  position: 'relative',
-  minWidth: '100%',
-  height: '40px',
-  cursor: 'pointer',
-  display: 'flex',
-  alignItems: 'center',
-  overflow: 'hidden',
-  transition: 'all 0.3s',
-  '&:hover': {
-    background: getColorDetail(primaryColors, 800)?.hexCode,
-    color: 'transparent',
-  },
-  '&::after': {
-    content: "' '",
-    backgroundSize: 'contain',
-    backgroundPosition: 'center',
-    backgroundRepeat: 'no-repeat',
-    height: '100%',
-    width: '14px',
-    transition: 'all 0.3s',
-    position: 'absolute',
-    right: 'calc(10%)',
-  },
-  '&:hover::after': {
-    transform: 'translate(50%, 0)',
-    right: '50%',
-    color: '#fff !important',
-  },
-};
-
 export const BaseMuiButton = {
   styleOverrides:{
     root:{
@@ -91,6 +58,7 @@ export const BaseMuiButton = {
       "&[buttontype='next'],&[buttontype='prev']":{
         position:'relative',
         transition: 'all 0.3s',
+        overflow:'hidden',
       },
       "&[buttontype='next']":{
         paddingLeft:'4px',

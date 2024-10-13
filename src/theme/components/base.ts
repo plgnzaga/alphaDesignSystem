@@ -1,3 +1,5 @@
+import { getMainColor } from "../common/functions";
+import { dangerColors, infoColors, successColors, warningColors } from "../palettes/base";
 import BaseAppBar from "./appbar/base";
 import { BaseMuiButton } from "./buttons/base";
 
@@ -40,9 +42,25 @@ export const BaseComponents = {
   MuiAlert:{
     styleOverrides:{
       root:{
-        //borderRadius:'1.5rem'
+        
       },
-    }
+      outlinedSuccess: {
+        border:`2px solid ${getMainColor(successColors)}`,
+        color:getMainColor(successColors)
+      },
+      outlinedWarning: {
+       border:`2px solid ${getMainColor(warningColors)}`
+      },
+      outlinedInfo: {
+       border:`2px solid ${getMainColor(infoColors)}`,
+       color:getMainColor(infoColors)
+      },
+      outlinedError:{
+        border:`2px solid ${getMainColor(dangerColors)}`,
+        color:getMainColor(dangerColors)
+      }
+    },
+    
   },
   MuiAppBar:BaseAppBar
 }

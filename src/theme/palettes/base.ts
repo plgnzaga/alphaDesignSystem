@@ -1,5 +1,5 @@
 import { getColor, getMainColor } from "../common/functions";
-import { PaletteColorOptionsType } from "../mui";
+import { PaletteColorOptionsType } from "../@types/mui";
 
 export type ColorScheme = {
     shade:number,

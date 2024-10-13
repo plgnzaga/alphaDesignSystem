@@ -1,27 +1,16 @@
 import * as React from 'react';
-import Alert from '@mui/material/Alert';
+import Alert, { AlertPropsVariantOverrides } from '@mui/material/Alert';
 import Stack from '@mui/material/Stack';
 
-export default function BasicAlerts() {
+
+const AlertComponent = (props:any) => {
   return (
     <Stack sx={{ width: '100%' }} spacing={2}>
-      <Alert severity="success">This is a success Alert.</Alert>
-      <Alert severity="info">This is an info Alert.</Alert>
-      <Alert severity="warning">This is a warning Alert.</Alert>
-      <Alert severity="error">This is an error Alert.</Alert>
-
-      <Alert variant="filled" severity="success">
-  This is a filled success Alert.
-</Alert>
-<Alert variant="filled" severity="info">
-  This is a filled info Alert.
-</Alert>
-<Alert variant="filled" severity="warning">
-  This is a filled warning Alert.
-</Alert>
-<Alert variant="filled" severity="error">
-  This is a filled error Alert.
-</Alert>
+      <Alert variant={props.variant} color="success">This is {props.variant} success Alert.</Alert>
+      <Alert variant={props.variant} color="info">This is {props.variant} info Alert.</Alert>
+      <Alert variant={props.variant} color="warning">This is {props.variant} warning Alert.</Alert>
+      <Alert variant={props.variant} color="error">This is {props.variant} error Alert.</Alert>
     </Stack>
   );
 }
+export default AlertComponent;
