@@ -1,6 +1,6 @@
 import { Button, Paper, Table, TableBody, TableCell, TableContainer, TableHead, TableRow } from "@mui/material"
 
-const CustomButtonsComponent = (props: any) => {
+const CustomButtonsComponent = () => {
 
   type ButtonType = {
     id: number,
@@ -58,7 +58,7 @@ const CustomButtonsComponent = (props: any) => {
               <TableCell>Type</TableCell>
               <TableCell>When to use</TableCell>
             </TableRow>
-          </TableHead>
+          </TableHead>  
           <TableBody>
             {buttonTypes.map((row) => (
               <TableRow
@@ -66,7 +66,7 @@ const CustomButtonsComponent = (props: any) => {
                 sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
               >
                 <TableCell component="th" scope="row">
-                  <Button variant={'contained'} buttonType={row.type}>{row.name}</Button>
+                  <Button variant={'contained'} buttontype={row.type}>{row.name}</Button>
                 </TableCell>
                 <TableCell>{`${row.type.toLowerCase()}`}</TableCell>
                 <TableCell>{row.useCase}</TableCell>

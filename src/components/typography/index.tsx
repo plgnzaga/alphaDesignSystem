@@ -1,5 +1,5 @@
-import { ArrowCircleLeft, ArrowCircleLeftOutlined, ArrowLeftOutlined, CopyAll, CopyAllTwoTone } from "@mui/icons-material";
-import { Box, Button, Grid, Paper, TextField, Tooltip, Typography} from "@mui/material";
+import { ArrowCircleLeftOutlined, CopyAll } from "@mui/icons-material";
+import { Box, Button, Grid, TextField, Tooltip, Typography } from "@mui/material";
 import { useCallback, useRef, useState } from "react";
 
 
@@ -17,7 +17,7 @@ const TypographyComponent = () => {
 
     const copyText = useCallback(async(index: number) => {
        
-        const text = refs[index].current.textContent;
+        const text = refs[index]?.current?.textContent;
         await navigator.clipboard.writeText(text.trim());
         setIsCopying(true);
         setTimeout(() => {
@@ -35,7 +35,7 @@ const TypographyComponent = () => {
                 <Typography variant="disclaimer">Type your text here.</Typography>
             </Grid>
             </Grid>
-            {Variants.map((x, index) =>
+            {Variants.map((x:any, index) =>
                 <Grid key={index} sx={{margin:'2rem 0'}}>
                     <Typography variant={x} sx={{ display: 'block' }}>{['Alpha'].includes(textValue) ? `${textValue.trim()} ${x.trim()}` : textValue.trim()}</Typography>
                     <Box style={{ display: 'flex' }}>

@@ -1,6 +1,5 @@
-import { Box, Grid, Typography } from "@mui/material"
-import { getColorDetail } from "../../theme/theme";
-import { ColorScheme, primaryColors } from "../../theme/palettes/base";
+import { Box, Grid, Typography } from "@mui/material";
+import { ColorScheme } from "../../theme/palettes/base";
 
 
 const Palette: React.FC<{ colorScheme: Partial<ColorScheme>[] }> = ({ colorScheme }) => {

@@ -1,6 +1,6 @@
 
 import { getColorDetail, getMainColor } from "../../common/functions";
-import { darkColors, lightColors, primaryColors, warningColors } from "../../palettes/base";
+import { primaryColors, warningColors } from "../../palettes/base";
 
 export const BaseMuiButton = {
   styleOverrides:{

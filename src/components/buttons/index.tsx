@@ -1,21 +1,21 @@
-import { Button, Paper, Table, TableBody, TableCell, TableContainer, TableHead, TableRow } from "@mui/material"
+import { Button, ButtonPropsColorOverrides, Paper, Table, TableBody, TableCell, TableContainer, TableHead, TableRow } from "@mui/material"
 
 const ButtonComponent = (props:any) => {
 
-    type ButtonType = {
-        id:number,
-        color:string,
-        useCase:string
+    interface ButtonType {
+        id?:number,
+        color?:ButtonPropsColorOverrides | string,
+        useCase?:string
     }
     const buttonVariants:ButtonType[] = [
         {
             id:1,
-            color:'primary',
+            color:"primary",
             useCase:''
         },
         {
             id:2,
-            color:'secondary',
+            color:"secondary",
             useCase:''
         },
         {

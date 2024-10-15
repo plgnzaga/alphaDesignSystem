@@ -1,12 +1,10 @@
 import { createTheme } from '@mui/material';
+import { TypographyOptions } from '@mui/material/styles/createTypography';
 import { createElement } from 'react';
 import { renderToStaticMarkup } from 'react-dom/server';
-import BaseAppBar from './components/appbar/base';
-import { BaseMuiButton } from './components/buttons/base';
+import { BaseComponents } from './components/base';
 import { BasePalette } from './palettes/base';
 import { BaseTypography } from './typography/base';
-import { Typography, TypographyOptions } from '@mui/material/styles/createTypography';
-import { BaseComponents } from './components/base';
 
 
 export const reactSvgComponentToMarkupString = (Component: any, props: any) =>

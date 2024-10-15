@@ -1,5 +1,4 @@
-import * as React from 'react';
-import Alert, { AlertPropsVariantOverrides } from '@mui/material/Alert';
+import Alert from '@mui/material/Alert';
 import Stack from '@mui/material/Stack';
 
 
