@@ -1,5 +1,6 @@
-import { getMainColor } from "../common/functions";
-import { dangerColors, infoColors, successColors, warningColors } from "../palettes/base";
+import { BorderColor } from "@mui/icons-material";
+import { getColorDetail, getMainColor } from "../common/functions";
+import { dangerColors, darkColors, infoColors, primaryColors, successColors, warningColors } from "../palettes/base";
 import BaseAppBar from "./appbar/base";
 import { BaseMuiButton } from "./buttons/base";
 
@@ -61,6 +62,29 @@ export const BaseComponents = {
       }
     },
     
+  },
+  MuiChip:{
+    styleOverrides:{
+      root:{
+        border: `2px solid`,
+        fontWeight: '600 !important',
+        
+      },
+      outlinedLight:{
+        borderColor: '#f5f5f5',
+        color:'gray',
+      },
+      filledWarning:{
+        color:getColorDetail(warningColors,700)?.hexCode
+      }
+    }
+  },
+  MuiPaper:{
+    styleOverrides:{
+      root:{
+        boxShadow: 'rgba(0, 0, 0, 0.05) 0px 0px 0px 1px !important'
+      }
+    }
   },
   MuiAppBar:BaseAppBar
 }

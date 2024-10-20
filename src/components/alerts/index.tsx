@@ -1,14 +1,50 @@
 import Alert from '@mui/material/Alert';
 import Stack from '@mui/material/Stack';
 
+interface AlertType {
+  id?:number,
+  color?:string,
+  useCase?:string
+}
+const alertVariants:AlertType[] = [
+  {
+      id:1,
+      color:"primary",
+      useCase:''
+  },
+  {
+      id:2,
+      color:"secondary",
+      useCase:''
+  },
+  {
+      id:3,
+      color:'success',
+      useCase:''
+  },
+  {
+      id:4,
+      color:'warning',
+      useCase:''
+  },
+  {
+      id:5,
+      color:'error',
+      useCase:''
+  },
+  {
+      id:6,
+      color:'info',
+      useCase:''
+  }
+]
 
 const AlertComponent = (props:any) => {
   return (
     <Stack sx={{ width: '100%' }} spacing={2}>
-      <Alert variant={props.variant} color="success">This is {props.variant} success Alert.</Alert>
-      <Alert variant={props.variant} color="info">This is {props.variant} info Alert.</Alert>
-      <Alert variant={props.variant} color="warning">This is {props.variant} warning Alert.</Alert>
-      <Alert variant={props.variant} color="error">This is {props.variant} error Alert.</Alert>
+      {alertVariants.map((item) => 
+        <Alert variant={props.variant} color={item.color}>This is {item.color} success Alert.</Alert>
+      )}
     </Stack>
   );
 }

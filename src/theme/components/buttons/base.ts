@@ -1,7 +1,7 @@
 
 import { getColorDetail, getMainColor } from "../../common/functions";
 import { primaryColors, warningColors } from "../../palettes/base";
-
+const appUrl = window.location.href.split("/")[0] + "//" + window.location.href.split("/")[2] + "/" + window.location.href.split("/")[3];
 export const BaseMuiButton = {
   styleOverrides:{
     root:{
@@ -19,7 +19,7 @@ export const BaseMuiButton = {
       },
       "&[buttontype='proceed']":{
         '&::after':{
-          content: `${window.location.pathname != '/iframe.html' ?  `url(..${window.location.pathname}/src/theme/dist/images/svg/proceed.svg)` : 'url(../src/theme/dist/images/svg/proceed.svg)'}`,
+          content: `${window.location.pathname != '/iframe.html' ?  `url(${appUrl}/src/theme/dist/images/svg/proceed.svg)` : 'url(../src/theme/dist/images/svg/proceed.svg)'}`,
           height:'14px',
           width: '14px',
           position:'relative',
@@ -38,7 +38,7 @@ export const BaseMuiButton = {
       },
       "&[buttontype='goback']":{
         '&::before':{
-          content: `${window.location.pathname != '/iframe.html' ?  `url(..${window.location.pathname}/src/theme/dist/images/svg/goback.svg)` : 'url(../src/theme/dist/images/svg/goback.svg)'}`,
+          content: `${window.location.pathname != '/iframe.html' ?  `url(${appUrl}/src/theme/dist/images/svg/goback.svg)` : 'url(../src/theme/dist/images/svg/goback.svg)'}`,
           height:'14px',
           width: '14px',
           position:'relative',
@@ -68,13 +68,13 @@ export const BaseMuiButton = {
           top:'1.5px',
         },
         '&::before':{
-          content: `${window.location.pathname != '/iframe.html' ?  `url(..${window.location.pathname}/src/theme/dist/images/svg/forwardIcon.svg)` : 'url(../src/theme/dist/images/svg/forwardIcon.svg)'}`,
+          content: `${window.location.pathname != '/iframe.html' ?  `url(${appUrl}/src/theme/dist/images/svg/forwardIcon.svg)` : 'url(../src/theme/dist/images/svg/forwardIcon.svg)'}`,
           transition: 'all 0.3s',
           right:'calc(50%)',
           visibility:'none'
         },
         '&::after':{
-          content: `${window.location.pathname != '/iframe.html' ?  `url(..${window.location.pathname}/src/theme/dist/images/svg/forwardIcon.svg)` : 'url(../src/theme/dist/images/svg/forwardIcon.svg)'}`,
+          content: `${window.location.pathname != '/iframe.html' ?  `url(${appUrl}/src/theme/dist/images/svg/forwardIcon.svg)` : 'url(../src/theme/dist/images/svg/forwardIcon.svg)'}`,
           transition: 'all 0.3s',
           right:'calc(-10%)',
         },
@@ -99,13 +99,13 @@ export const BaseMuiButton = {
           top:'1.5px',
         },
         '&::after':{
-          content: `${window.location.pathname != '/iframe.html' ?  `url(..${window.location.pathname}/src/theme/dist/images/svg/backwardIcon.svg)` : 'url(../src/theme/dist/images/svg/backwardIcon.svg)'}`,
+          content: `${window.location.pathname != '/iframe.html' ?  `url(${appUrl}/src/theme/dist/images/svg/backwardIcon.svg)` : 'url(../src/theme/dist/images/svg/backwardIcon.svg)'}`,
           transition: 'all 0.3s',
           left:'calc(50%)',
           visibility:'none'
         },
         '&::before':{
-          content: `${window.location.pathname != '/iframe.html' ?  `url(..${window.location.pathname}/src/theme/dist/images/svg/backwardIcon.svg)` : 'url(../src/theme/dist/images/svg/backwardIcon.svg)'}`,
+          content: `${window.location.pathname != '/iframe.html' ?  `url(${appUrl}/src/theme/dist/images/svg/backwardIcon.svg)` : 'url(../src/theme/dist/images/svg/backwardIcon.svg)'}`,
           transition: 'all 0.3s',
           right:'calc(10%)',
         },
@@ -153,7 +153,7 @@ export const BaseMuiButton = {
           color:'transparent'
         },
         '&::after':{
-          content: `${window.location.pathname != '/iframe.html' ?  `url(..${window.location.pathname}/src/theme/dist/images/svg/download.svg)` : 'url(../src/theme/dist/images/svg/download.svg)'}`,
+          content: `${window.location.pathname != '/iframe.html' ?  `url(${appUrl}/src/theme/dist/images/svg/download.svg)` : 'url(../src/theme/dist/images/svg/download.svg)'}`,
         },
       },
       "&[buttontype='add']":{
@@ -162,7 +162,7 @@ export const BaseMuiButton = {
           color:'transparent'
         },
         '&::after':{
-          content: `${window.location.pathname != '/iframe.html' ?  `url(..${window.location.pathname}/src/theme/dist/images/svg/add.svg)` : 'url(../src/theme/dist/images/svg/add.svg)'}`,
+          content: `${window.location.pathname != '/iframe.html' ?  `url(${appUrl}/src/theme/dist/images/svg/add.svg)` : 'url(../src/theme/dist/images/svg/add.svg)'}`,
         },
       }
     },
@@ -187,6 +187,7 @@ export const BaseMuiButton = {
       props: { variant: "outlined", },
       style: {
         border:'2px solid',
+        background:'white',
         fontWeight:600,
         '&:hover':{
           border:'2px solid',
