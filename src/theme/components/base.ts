@@ -66,9 +66,10 @@ export const BaseComponents = {
   MuiChip:{
     styleOverrides:{
       root:{
-        border: `2px solid`,
-        fontWeight: '600 !important',
-        
+        '&[importance="high"]':{
+          border: `2px solid`,
+          fontWeight: '600 !important',
+        }
       },
       outlinedLight:{
         borderColor: '#f5f5f5',
