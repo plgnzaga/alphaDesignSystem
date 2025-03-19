@@ -1,7 +1,14 @@
 
 import { getColorDetail, getMainColor } from "../../common/functions";
 import { primaryColors, warningColors } from "../../palettes/base";
+import prevIconSvg from "../../dist/images/svg/backwardIcon.svg";
+import nextIconSvg from "../../dist/images/svg/forwardIcon.svg";
+import backwardIconSvg from "../../dist/images/svg/goback.svg";
+import forwardIconSvg from "../../dist/images/svg/proceed.svg"
 const appUrl = window.location.href.split("/")[0] + "//" + window.location.href.split("/")[2] + "/" + window.location.href.split("/")[3];
+const addIconSvg = "data:image/svg+xml,%3Csvg width='14' height='14' viewBox='0 0 14 14' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M14 8H8V14H6V8H0V6H6V0H8V6H14V8Z' fill='white'/%3E%3C/svg%3E%0A"
+const downloadIconSvg = "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 35 35' id='bdd05811-e15d-428c-bb53-8661459f9307' data-name='Layer 2' class='svg'%3E%3Cpath stroke='%23ffffff' fill='%23ffffff' d='M17.5,22.131a1.249,1.249,0,0,1-1.25-1.25V2.187a1.25,1.25,0,0,1,2.5,0V20.881A1.25,1.25,0,0,1,17.5,22.131Z'%3E%3C/path%3E%3Cpath stroke='%23ffffff' fill='%23ffffff' d='M17.5,22.693a3.189,3.189,0,0,1-2.262-.936L8.487,15.006a1.249,1.249,0,0,1,1.767-1.767l6.751,6.751a.7.7,0,0,0,.99,0l6.751-6.751a1.25,1.25,0,0,1,1.768,1.767l-6.752,6.751A3.191,3.191,0,0,1,17.5,22.693Z'%3E%3C/path%3E%3Cpath stroke='%23ffffff' fill='%23ffffff' d='M31.436,34.063H3.564A3.318,3.318,0,0,1,.25,30.749V22.011a1.25,1.25,0,0,1,2.5,0v8.738a.815.815,0,0,0,.814.814H31.436a.815.815,0,0,0,.814-.814V22.011a1.25,1.25,0,1,1,2.5,0v8.738A3.318,3.318,0,0,1,31.436,34.063Z'%3E%3C/path%3E%3C/svg%3E"
+
 export const BaseMuiButton = {
   styleOverrides:{
     root:{
@@ -19,7 +26,8 @@ export const BaseMuiButton = {
       },
       "&[buttontype='proceed']":{
         '&::after':{
-          content: `${window.location.pathname != '/iframe.html' ?  `url(${appUrl}/src/theme/dist/images/svg/proceed.svg)` : 'url(../src/theme/dist/images/svg/proceed.svg)'}`,
+          content: `url(${forwardIconSvg})`,
+          //content: `${window.location.pathname != '/iframe.html' ?  `url(${appUrl}/src/theme/dist/images/svg/proceed.svg)` : 'url(../src/theme/dist/images/svg/proceed.svg)'}`,
           height:'14px',
           width: '14px',
           position:'relative',
@@ -38,7 +46,8 @@ export const BaseMuiButton = {
       },
       "&[buttontype='goback']":{
         '&::before':{
-          content: `${window.location.pathname != '/iframe.html' ?  `url(${appUrl}/src/theme/dist/images/svg/goback.svg)` : 'url(../src/theme/dist/images/svg/goback.svg)'}`,
+          content: `url(${backwardIconSvg})`,
+          //content: `${window.location.pathname != '/iframe.html' ?  `url(${appUrl}/src/theme/dist/images/svg/goback.svg)` : 'url(../src/theme/dist/images/svg/goback.svg)'}`,
           height:'14px',
           width: '14px',
           position:'relative',
@@ -68,13 +77,15 @@ export const BaseMuiButton = {
           top:'1.5px',
         },
         '&::before':{
-          content: `${window.location.pathname != '/iframe.html' ?  `url(${appUrl}/src/theme/dist/images/svg/forwardIcon.svg)` : 'url(../src/theme/dist/images/svg/forwardIcon.svg)'}`,
+          content: `url(${nextIconSvg})`,
+          //content: `${window.location.pathname != '/iframe.html' ?  `url(${appUrl}/src/theme/dist/images/svg/forwardIcon.svg)` : 'url(../src/theme/dist/images/svg/forwardIcon.svg)'}`,
           transition: 'all 0.3s',
           right:'calc(50%)',
           visibility:'none'
         },
         '&::after':{
-          content: `${window.location.pathname != '/iframe.html' ?  `url(${appUrl}/src/theme/dist/images/svg/forwardIcon.svg)` : 'url(../src/theme/dist/images/svg/forwardIcon.svg)'}`,
+          ontent: `url(${nextIconSvg})`,
+          //content: `${window.location.pathname != '/iframe.html' ?  `url(${appUrl}/src/theme/dist/images/svg/forwardIcon.svg)` : 'url(../src/theme/dist/images/svg/forwardIcon.svg)'}`,
           transition: 'all 0.3s',
           right:'calc(-10%)',
         },
@@ -99,13 +110,15 @@ export const BaseMuiButton = {
           top:'1.5px',
         },
         '&::after':{
-          content: `${window.location.pathname != '/iframe.html' ?  `url(${appUrl}/src/theme/dist/images/svg/backwardIcon.svg)` : 'url(../src/theme/dist/images/svg/backwardIcon.svg)'}`,
+          content: `url(${prevIconSvg})`,
+          //content: `${window.location.pathname != '/iframe.html' ?  `url(${appUrl}/src/theme/dist/images/svg/backwardIcon.svg)` : 'url(../src/theme/dist/images/svg/backwardIcon.svg)'}`,
           transition: 'all 0.3s',
           left:'calc(50%)',
           visibility:'none'
         },
         '&::before':{
-          content: `${window.location.pathname != '/iframe.html' ?  `url(${appUrl}/src/theme/dist/images/svg/backwardIcon.svg)` : 'url(../src/theme/dist/images/svg/backwardIcon.svg)'}`,
+          content: `url(${prevIconSvg})`,
+          //content: `${window.location.pathname != '/iframe.html' ?  `url(${appUrl}/src/theme/dist/images/svg/backwardIcon.svg)` : 'url(../src/theme/dist/images/svg/backwardIcon.svg)'}`,
           transition: 'all 0.3s',
           right:'calc(10%)',
         },
@@ -153,7 +166,7 @@ export const BaseMuiButton = {
           color:'transparent'
         },
         '&::after':{
-          content: `${window.location.pathname != '/iframe.html' ?  `url(${appUrl}/src/theme/dist/images/svg/download.svg)` : 'url(../src/theme/dist/images/svg/download.svg)'}`,
+          content: `url("${downloadIconSvg}")`,
         },
       },
       "&[buttontype='add']":{
@@ -162,7 +175,8 @@ export const BaseMuiButton = {
           color:'transparent'
         },
         '&::after':{
-          content: `${window.location.pathname != '/iframe.html' ?  `url(${appUrl}/src/theme/dist/images/svg/add.svg)` : 'url(../src/theme/dist/images/svg/add.svg)'}`,
+          content:`url("${addIconSvg}")`
+          //content: `${window.location.pathname != '/iframe.html' ?  `url(${appUrl}/src/theme/dist/images/svg/add.svg)` : 'url(../src/theme/dist/images/svg/add.svg)'}`,
         },
       }
     },
